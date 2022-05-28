@@ -1,15 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Autocomplete Endereço</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
     <script src="js/scripts.js" defer></script>
-</head>
-<body>
-    <h1>teste</h1>
-</body>
+  </head>
+  <body>
+    <div class="container-md">
+      <h2>Cadastre o seu endereço</h2>
+      <form id="address-form">
+        <div class="row mb-3">
+          <div class="form-floating">
+            <input
+              type="email"
+              class="form-control"
+              id="cep"
+              name="cep"
+              placeholder="Digite o seu CEP"
+              maxlength="8"
+            />
+            <label for="cep">Digite o seu CEP</label>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col form-floating">
+            <input
+              type="text"
+              class="form-control"
+              id="address"
+              name="address"
+              placeholder="Rua"
+            />
+            <label for="address">Rua</label>
+          </div>
+          <div class="col form-floating">
+            <input
+              type="text"
+              class="form-control"
+              id="number"
+              name="number"
+              placeholder="Digite o número da residência"
+            />
+            <label for="number">Digite o número da residência</label>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col form-floating">
+            <input
+              type="text"
+              class="form-control"
+              id="complement"
+              name="complement"
+              placeholder="Digite o complemento"
+            />
+            <label for="complement">Digite o complemento</label>
+          </div>
+          <div class="col form-floating">
+            <input
+              type="text"
+              class="form-control"
+              id="neighborhood"
+              name="neighborhood"
+              placeholder="Bairro"
+            />
+            <label for="neighborhood">Bairro</label>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col form-floating">
+            <input
+              type="text"
+              class="form-control"
+              id="city"
+              name="city"
+              placeholder="Cidade"
+            />
+            <label for="city">Cidade</label>
+          </div>
+          <div class="col">
+            <select class="form-select">
+              <option selected>Estado</option>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+      </form>
+    </div>
+  </body>
 </html>
