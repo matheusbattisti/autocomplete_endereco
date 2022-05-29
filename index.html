@@ -15,18 +15,24 @@
     <script src="js/scripts.js" defer></script>
   </head>
   <body>
+    <div id="loader" class="hide">
+      <div class="spinner-border text-info" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
     <div class="container-md">
       <h2>Cadastre o seu endereço</h2>
       <form id="address-form">
         <div class="row mb-3">
           <div class="form-floating">
             <input
-              type="email"
+              type="text"
               class="form-control"
               id="cep"
               name="cep"
               placeholder="Digite o seu CEP"
               maxlength="8"
+              required
             />
             <label for="cep">Digite o seu CEP</label>
           </div>
@@ -39,6 +45,8 @@
               id="address"
               name="address"
               placeholder="Rua"
+              disabled
+              required
             />
             <label for="address">Rua</label>
           </div>
@@ -49,6 +57,8 @@
               id="number"
               name="number"
               placeholder="Digite o número da residência"
+              disabled
+              required
             />
             <label for="number">Digite o número da residência</label>
           </div>
@@ -61,6 +71,7 @@
               id="complement"
               name="complement"
               placeholder="Digite o complemento"
+              disabled
             />
             <label for="complement">Digite o complemento</label>
           </div>
@@ -71,6 +82,8 @@
               id="neighborhood"
               name="neighborhood"
               placeholder="Bairro"
+              disabled
+              required
             />
             <label for="neighborhood">Bairro</label>
           </div>
@@ -83,11 +96,13 @@
               id="city"
               name="city"
               placeholder="Cidade"
+              disabled
+              required
             />
             <label for="city">Cidade</label>
           </div>
           <div class="col">
-            <select class="form-select">
+            <select class="form-select" id="region" disabled required>
               <option selected>Estado</option>
               <option value="AC">Acre</option>
               <option value="AL">Alagoas</option>
