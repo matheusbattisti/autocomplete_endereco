@@ -1,9 +1,10 @@
 :root {
   --bg-color: #04044c;
+  --secondary-bg-color: #494a7d;
   --primary-color: #fff;
   --secondary-color: #25cc88;
-  --text-color: #61638e;
-  --border-color: #111355;
+  --text-color: #8789af;
+  --border-color: #20235b;
 }
 
 #checkout-page {
@@ -32,10 +33,61 @@
   display: none !important;
 }
 
+#message {
+  width: 40%;
+}
+
+.alert.alert-light p {
+  border-bottom: 1px solid #333;
+  padding: 1.2em 0;
+}
+
 /* Steps */
 #steps {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.step i {
+  background-color: var(--secondary-bg-color);
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+.step .active {
+  background-color: var(--secondary-color);
+}
+
+.step p {
+  color: var(--text-color);
+}
+
+.line {
+  border-bottom: 1px solid var(--border-color);
+  position: absolute;
+  top: 22.5px;
+  width: 90%;
+  left: 5%;
+  z-index: -1;
+}
+
+/* Form header */
+#form-header p {
+  color: var(--text-color);
 }
 
 /* Form */
@@ -47,12 +99,22 @@
 #order-form-container input,
 #order-form-container select {
   background-color: var(--bg-color);
-  border-color: var(--border-color);
+  border: 2px solid var(--border-color);
+  color: var(--primary-color);
+}
+
+#order-form-container select {
+  padding: 1rem 0.75rem;
+}
+
+#order-form-container label {
+  color: var(--text-color);
 }
 
 #order-form-container input:disabled,
 #order-form-container select:disabled {
-  background-color: #090938;
+  background-color: var(--secondary-bg-color);
+  color: var(--text-color);
 }
 
 #order-form-container input:focus {
@@ -63,11 +125,17 @@
   left: 1em;
 }
 
-#message {
-  width: 40%;
+#save-btn {
+  background-color: #25cc88;
+  border: none;
+  height: 3em;
+  width: 8em;
+  border-radius: 1.5em;
 }
 
-.alert.alert-light p {
-  border-bottom: 1px solid #333;
-  padding: 1.2em 0;
+/* Responsive */
+@media (min-width: 500px) {
+  #save-btn {
+    width: 8em;
+  }
 }

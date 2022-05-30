@@ -35,29 +35,32 @@
         </div>
       </div>
     </div>
-    <div id="order-form-container" class="container">
-      <div id="steps">
+    <div id="order-form-container" class="container p-6 px-md-0">
+      <div id="steps" class="mb-md-4 pb-md-4">
+        <div class="line"></div>
         <div class="step">
-          <i class="bi bi-person"></i>
-          <p>Criação de conta</p>
+          <i class="bi bi-person active"></i>
+          <p class="d-none d-md-auto">Criação de conta</p>
         </div>
         <div class="step">
-          <i class="bi bi-geo-alt"></i>
-          <p>Endereço</p>
+          <i class="bi bi-geo-alt active"></i>
+          <p class="d-none d-md-auto">Endereço</p>
         </div>
         <div class="step">
           <i class="bi bi-credit-card"></i>
-          <p>Pagamento</p>
+          <p class="d-none d-md-auto">Pagamento</p>
         </div>
       </div>
-      <h2>Cadastre o seu endereço</h2>
-      <p>Preencha os campos para podermos enviar seus produtos</p>
+      <div id="form-header">
+        <h2>Cadastre o seu endereço</h2>
+        <p>Preencha os campos para podermos enviar seus produtos</p>
+      </div>
       <form id="address-form">
         <div class="row mb-3">
           <div class="form-floating">
             <input
               type="text"
-              class="form-control"
+              class="form-control shadow-none"
               id="cep"
               name="cep"
               placeholder="Digite o seu CEP"
@@ -68,10 +71,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col form-floating">
+          <div class="col-12 col-sm-6 mb-3 mb-md-0 form-floating">
             <input
               type="text"
-              class="form-control"
+              class="form-control shadow-none"
               id="address"
               name="address"
               placeholder="Rua"
@@ -81,10 +84,10 @@
             />
             <label for="address">Rua</label>
           </div>
-          <div class="col form-floating">
+          <div class="col-12 col-sm-6 form-floating">
             <input
               type="text"
-              class="form-control"
+              class="form-control shadow-none"
               id="number"
               name="number"
               placeholder="Digite o número da residência"
@@ -96,10 +99,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col form-floating">
+          <div class="col-12 col-sm-6 mb-3 mb-md-0 form-floating">
             <input
               type="text"
-              class="form-control"
+              class="form-control shadow-none"
               id="complement"
               name="complement"
               placeholder="Digite o complemento"
@@ -108,10 +111,10 @@
             />
             <label for="complement">Digite o complemento</label>
           </div>
-          <div class="col form-floating">
+          <div class="col-12 col-sm-6 form-floating">
             <input
               type="text"
-              class="form-control"
+              class="form-control shadow-none"
               id="neighborhood"
               name="neighborhood"
               placeholder="Bairro"
@@ -123,10 +126,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col form-floating">
+          <div class="col-12 col-sm-6 mb-3 mb-md-0 form-floating">
             <input
               type="text"
-              class="form-control"
+              class="form-control shadow-none"
               id="city"
               name="city"
               placeholder="Cidade"
@@ -136,9 +139,9 @@
             />
             <label for="city">Cidade</label>
           </div>
-          <div class="col">
+          <div class="col-12 col-sm-6 mb-3">
             <select
-              class="form-select"
+              class="form-select shadow-none"
               id="region"
               disabled
               required
@@ -175,9 +178,11 @@
             </select>
           </div>
         </div>
-        <button id="save-btn" type="submit" class="btn btn-primary">
-          Cadastrar
-        </button>
+        <div class="d-flex justify-content-end">
+          <button id="save-btn" type="submit" class="btn btn-primary">
+            Cadastrar
+          </button>
+        </div>
       </form>
     </div>
   </body>

@@ -50,13 +50,22 @@ const getAddress = async (cep) => {
   console.log(formInputs);
   console.log(data.erro);
 
+  // Show error and reset form
   if (data.erro === "true") {
+    if (!addressInput.hasAttribute("disabled")) {
+      toggleDisabled();
+    }
+
+    addressForm.reset();
     toggleLoader();
     toggleMessage("CEP Inválido, tente novamente.");
     return;
   }
 
-  toggleDisabled();
+  // Activate disabled attribute if form is empty
+  if (addressInput.value === "") {
+    toggleDisabled();
+  }
 
   addressInput.value = data.logradouro;
   cityInput.value = data.localidade;
@@ -94,8 +103,6 @@ const toggleMessage = (msg) => {
   const messageElement = document.querySelector("#message");
 
   const messageTextElement = document.querySelector("#message p");
-
-  console.log(msg);
 
   messageTextElement.innerText = msg;
 
