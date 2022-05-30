@@ -5,10 +5,13 @@ const neighborhoodInput = document.querySelector("#neighborhood");
 const regionInput = document.querySelector("#region");
 const formInputs = document.querySelectorAll("#address-form input");
 
+const closeButton = document.querySelector("#close-message");
+
+const saveAddressBtn = document.querySelector("#save-btn");
+
 // Validate CEP Input
 cepInput.addEventListener("keypress", (e) => {
   const onlyNumbers = /[0-9]|\./;
-  const inputValue = e.target.value;
   const key = String.fromCharCode(e.keyCode);
 
   console.log(key);
@@ -36,6 +39,8 @@ cepInput.addEventListener("keyup", (e) => {
 const getAddress = async (cep) => {
   toggleLoader();
 
+  cepInput.blur();
+
   const apiUrl = `https://viacep.com.br/ws/${cep}/json/`;
 
   const response = await fetch(apiUrl);
@@ -44,6 +49,13 @@ const getAddress = async (cep) => {
 
   console.log(data);
   console.log(formInputs);
+  console.log(data.erro);
+
+  if (data.erro === "true") {
+    toggleLoader();
+    toggleMessage("CEP Inválido, tente novamente.");
+    return;
+  }
 
   formInputs.forEach((input) => {
     input.removeAttribute("disabled");
@@ -61,7 +73,34 @@ const getAddress = async (cep) => {
 
 // Show or hide loader
 const toggleLoader = () => {
+  const fadeElement = document.querySelector("#fade");
   const loaderElement = document.querySelector("#loader");
 
+  fadeElement.classList.toggle("hide");
   loaderElement.classList.toggle("hide");
 };
+
+// Show or hide message
+const toggleMessage = (msg) => {
+  const fadeElement = document.querySelector("#fade");
+  const messageElement = document.querySelector("#message");
+
+  const messageTextElement = document.querySelector("#message p");
+
+  console.log(msg);
+
+  messageTextElement.innerText = msg;
+
+  fadeElement.classList.toggle("hide");
+  messageElement.classList.toggle("hide");
+};
+
+// Close message modal
+closeButton.addEventListener("click", () => toggleMessage());
+
+// Save address
+saveAddressBtn.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  toggleMessage("Endereço salvo com sucesso!");
+});

@@ -15,9 +15,18 @@
     <script src="js/scripts.js" defer></script>
   </head>
   <body>
-    <div id="loader" class="hide">
-      <div class="spinner-border text-info" role="status">
+    <div id="fade" class="hide">
+      <div id="loader" class="spinner-border text-info hide" role="status">
         <span class="visually-hidden">Loading...</span>
+      </div>
+      <div id="message" class="hide">
+        <div class="alert alert-light" role="alert">
+          <h4>Mensagem:</h4>
+          <p>CEP Inválido, tente novamente.</p>
+          <button id="close-message" type="button" class="btn btn-secondary">
+            Fechar
+          </button>
+        </div>
       </div>
     </div>
     <div class="container-md">
@@ -134,7 +143,9 @@
             </select>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <button id="save-btn" type="submit" class="btn btn-primary">
+          Cadastrar
+        </button>
       </form>
     </div>
   </body>
