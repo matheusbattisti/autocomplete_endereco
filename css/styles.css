@@ -1,3 +1,17 @@
+:root {
+  --bg-color: #04044c;
+  --primary-color: #fff;
+  --secondary-color: #25cc88;
+  --text-color: #61638e;
+  --border-color: #111355;
+}
+
+#checkout-page {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+}
+
+/* Message */
 #fade {
   position: absolute;
   width: 100%;
@@ -18,8 +32,39 @@
   display: none !important;
 }
 
+/* Steps */
+#steps {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Form */
+#order-form-container {
+  max-width: 700px;
+  padding-top: 3em;
+}
+
+#order-form-container input,
+#order-form-container select {
+  background-color: var(--bg-color);
+  border-color: var(--border-color);
+}
+
+#order-form-container input:disabled,
+#order-form-container select:disabled {
+  background-color: #090938;
+}
+
+#order-form-container input:focus {
+  border-color: var(--secondary-color);
+}
+
+#order-form-container .form-floating > label {
+  left: 1em;
+}
+
 #message {
-  width: 50%;
+  width: 40%;
 }
 
 .alert.alert-light p {

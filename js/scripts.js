@@ -1,13 +1,12 @@
+const addressForm = document.querySelector("#address-form");
 const cepInput = document.querySelector("#cep");
 const addressInput = document.querySelector("#address");
 const cityInput = document.querySelector("#city");
 const neighborhoodInput = document.querySelector("#neighborhood");
 const regionInput = document.querySelector("#region");
-const formInputs = document.querySelectorAll("#address-form input");
+const formInputs = document.querySelectorAll("[data-input]");
 
 const closeButton = document.querySelector("#close-message");
-
-const saveAddressBtn = document.querySelector("#save-btn");
 
 // Validate CEP Input
 cepInput.addEventListener("keypress", (e) => {
@@ -57,11 +56,7 @@ const getAddress = async (cep) => {
     return;
   }
 
-  formInputs.forEach((input) => {
-    input.removeAttribute("disabled");
-  });
-
-  regionInput.removeAttribute("disabled");
+  toggleDisabled();
 
   addressInput.value = data.logradouro;
   cityInput.value = data.localidade;
@@ -69,6 +64,19 @@ const getAddress = async (cep) => {
   regionInput.value = data.uf;
 
   toggleLoader();
+};
+
+// Add or remove disable attribute
+const toggleDisabled = () => {
+  if (regionInput.hasAttribute("disabled")) {
+    formInputs.forEach((input) => {
+      input.removeAttribute("disabled");
+    });
+  } else {
+    formInputs.forEach((input) => {
+      input.setAttribute("disabled", "disabled");
+    });
+  }
 };
 
 // Show or hide loader
@@ -99,8 +107,18 @@ const toggleMessage = (msg) => {
 closeButton.addEventListener("click", () => toggleMessage());
 
 // Save address
-saveAddressBtn.addEventListener("submit", (e) => {
+addressForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  toggleMessage("Endereço salvo com sucesso!");
+  toggleLoader();
+
+  setTimeout(() => {
+    toggleLoader();
+
+    toggleMessage("Endereço salvo com sucesso!");
+
+    addressForm.reset();
+
+    toggleDisabled();
+  }, 1000);
 });
