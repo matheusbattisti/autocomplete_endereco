@@ -28,27 +28,27 @@
       <div id="message" class="hide">
         <div class="alert alert-light" role="alert">
           <h4>Mensagem:</h4>
-          <p>CEP Inválido, tente novamente.</p>
+          <p></p>
           <button id="close-message" type="button" class="btn btn-secondary">
             Fechar
           </button>
         </div>
       </div>
     </div>
-    <div id="order-form-container" class="container p-6 px-md-0">
-      <div id="steps" class="mb-md-4 pb-md-4">
+    <div id="order-form-container" class="container p-6 my-md-4 px-md-0">
+      <div id="steps" class="mb-md-3 pb-md-3">
         <div class="line"></div>
         <div class="step">
           <i class="bi bi-person active"></i>
-          <p class="d-none d-md-auto">Criação de conta</p>
+          <p class="d-none d-md-block">Criação de conta</p>
         </div>
         <div class="step">
           <i class="bi bi-geo-alt active"></i>
-          <p class="d-none d-md-auto">Endereço</p>
+          <p class="d-none d-md-block">Endereço</p>
         </div>
         <div class="step">
           <i class="bi bi-credit-card"></i>
-          <p class="d-none d-md-auto">Pagamento</p>
+          <p class="d-none d-md-block">Pagamento</p>
         </div>
       </div>
       <div id="form-header">
@@ -65,6 +65,7 @@
               name="cep"
               placeholder="Digite o seu CEP"
               maxlength="8"
+              minlength="8"
               required
             />
             <label for="cep">Digite o seu CEP</label>
