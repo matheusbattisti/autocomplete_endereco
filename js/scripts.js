@@ -51,7 +51,7 @@ const getAddress = async (cep) => {
   console.log(data.erro);
 
   // Show error and reset form
-  if (data.erro === "true") {
+  if (data.erro === true) {
     if (!addressInput.hasAttribute("disabled")) {
       toggleDisabled();
     }
